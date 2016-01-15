@@ -24,17 +24,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 },
 
                 controller:'colCtrl'
-                //controller: function (typeEmployee) {
-                //    console.log('type of employee is:', typeEmployee);
-                //    if (typeEmployee === 'colleague') {
-                //        console.log('not allowed to view this');
-                //    }
-                //
-                //    if (typeEmployee === 'manager') {
-                //        console.log('allowed to view this');
-                //    }
-                //
-                //}
             }
         })
 
