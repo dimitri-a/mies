@@ -7,7 +7,7 @@ app.config(function($stateProvider,$urlRouterProvider){
 
     debugger;
 
-    //$urlRouterProvider.otherwise('/home')
+    $urlRouterProvider.otherwise('/home')
 
     $stateProvider
         .state('testing',{
@@ -17,7 +17,7 @@ app.config(function($stateProvider,$urlRouterProvider){
 
         .state('manager',{
             url:"/manager",
-            template:'<p>this is the manager</p>'
+            templateUrl:'views/manager.html'
         })
 
         .state('home',{
