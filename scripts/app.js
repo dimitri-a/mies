@@ -4,48 +4,31 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
     console.log('inside the stateprovider');
 
-    debugger;
-
     $urlRouterProvider.otherwise('/home')
 
     $stateProvider
         .state('manager', {
             url: "/manager",
+            template: "manager view tbd",
 
-            templateUrl: "views/manager.html",
 
-            resolve: {
-                typeEmployee: function ($q, $timeout) {
-                    var deferred = $q.defer();
-                    $timeout(function () {
-                        deferred.resolve('manager');
-                    }, 200);
-                    return deferred.promise;
-                },
-
-                controller:'colCtrl'
-            }
         })
 
         .state('colleague', {
             url: "/colleague",
-
-            templateUrl: "views/colleague.html",
-
+            template: "collegue view tbf",
             resolve: {
                 typeEmployee: function ($q, $timeout) {
                     var deferred = $q.defer();
                     $timeout(function () {
-                        deferred.resolve('manager');
+                        deferred.resolve('emp');
                     }, 200);
-                    console.log('called typeemployee');
                     return deferred.promise;
-                }
-                ,
-                controller:  colCtrl
+                },
+
+                controller:colCtrl
             }
         })
-
 
         .state('home', {
             url: "/"
