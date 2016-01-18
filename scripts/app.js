@@ -9,7 +9,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('manager', {
             url: "/manager",
-            template: "manager view tbd",
+            templateUrl: "views/colleague.html",
             controller:managerCtrl,
             resolve: {
                 msg: function() {

@@ -1,5 +1,17 @@
 .pad
+ {
+     padding:2px;
+     margin:2px;
+ }
+
+.blok
 {
-    padding:10px;
-    margin:10px;
+    width: 240px !important;
+    height: 240px !important;
+    padding:2px;
+    margin:2px;
+    white-space: normal;
+    font-size:20px;
+    /*word-wrap: break-word;*/
+    /*line-height: 6.428571;*/
 }
