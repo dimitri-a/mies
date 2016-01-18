@@ -19,9 +19,13 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         })
 
         .state('colleague', {
+
             url: "/colleague",
-            template: "/views/colleague.html",
+
+            templateUrl: "views/colleague.html",
+
             controller: colCtrl,
+
             resolve: {
                 msg: function() {
                     return 'resolve from collegue';
