@@ -10,24 +10,24 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         .state('manager', {
             url: "/manager",
             template: "manager view tbd",
-
-
+            controller:managerCtrl,
+            resolve: {
+                msg: function() {
+                    return 'resolve from manager';
+                }
+            }
         })
 
         .state('colleague', {
             url: "/colleague",
-            template: "collegue view tbf",
+            template: "/views/colleague.html",
+            controller: colCtrl,
             resolve: {
-                typeEmployee: function ($q, $timeout) {
-                    var deferred = $q.defer();
-                    $timeout(function () {
-                        deferred.resolve('emp');
-                    }, 200);
-                    return deferred.promise;
-                },
-
-                controller:colCtrl
+                msg: function() {
+                    return 'resolve from collegue';
+                }
             }
+
         })
 
         .state('home', {
