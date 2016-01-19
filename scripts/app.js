@@ -4,34 +4,29 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
     console.log('inside the stateprovider');
 
-    $urlRouterProvider.otherwise('/home')
+    $urlRouterProvider.otherwise('/manager')
 
     $stateProvider
         .state('manager', {
             url: "/manager",
             templateUrl: "views/colleague.html",
-            controller:managerCtrl,
+            controller: managerCtrl,
             resolve: {
-                msg: function() {
+                msg: function () {
                     return 'resolve from manager';
                 }
             }
         })
 
         .state('colleague', {
-
             url: "/colleague",
-
             templateUrl: "views/colleague.html",
-
             controller: colCtrl,
-
             resolve: {
-                msg: function() {
+                msg: function () {
                     return 'resolve from collegue';
                 }
             }
-
         })
 
         .state('home', {
