@@ -4,7 +4,7 @@ function managerCtrl($scope, msg) {
     console.log('inside mgr ctrl');
 
     $scope.items = [
-        {'url': 'http://www.google.com', 'text': 'Add new exception'},
+        {'url': 'http://www.google.com', 'text': 'Add exception'},
         {'url': 'http://www.google.com', 'text': 'Contact WFP&O'},
         {'url': 'http://www.google.com', 'text': 'Request Flex for today'},
         {'url': 'http://www.google.com', 'text': 'My business units activities for today'},

@@ -1,31 +1,22 @@
-var gulp = require('gulp'),
-    connect = require('gulp-connect'),
-    livereload = require('gulp-livereload');
-    open =require('gulp-open');
+var gulp = require('gulp');
+
+var connect = require('gulp-connect');
+
+
+gulp.task('myScripts', function () {
+    gulp.src('scripts/*.js')
+        .pipe(connect.reload());
+});
 
 gulp.task('connect', function() {
-    connect.server();
+    connect.server({
+        livereload: true
+    });
+});
+
+gulp.task('watchMyScripts', function() {
+    gulp.watch('scripts/*.js', ['myScripts']);
 });
 
 
-gulp.task('js', function() {
-    gulp.src('scripts/*.js')
-        .pipe(livereload());
-});
-
-gulp.task('watch', function() {
-    livereload.listen();
-    gulp.watch('scripts/*.js');
-});
-
-gulp.task('op', function(){
-    var options = {
-        uri: 'localhost:8080',
-        app: 'firefox'
-    };
-    gulp.src(__filename)
-        .pipe(open(options));
-});
-
-gulp.task('default',['connect','op','watch','js']);
-
+gulp.task('default', [ 'connect','watchMyScripts']);
