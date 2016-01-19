@@ -4,7 +4,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
     console.log('inside the stateprovider');
 
-    $urlRouterProvider.otherwise('/manager')
+    $urlRouterProvider.otherwise('/colleague')
 
     $stateProvider
         .state('manager', {
@@ -13,7 +13,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             controller: managerCtrl,
             resolve: {
                 msg: function () {
-                    return 'resolve from manager';
+                    return 'resolve frofffddm manager';
                 }
             }
         })

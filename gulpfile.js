@@ -1,24 +1,31 @@
 var gulp = require('gulp'),
-    connect = require('gulp-connect');
-
-var open =require('open');
+    connect = require('gulp-connect'),
+    livereload = require('gulp-livereload');
+    open =require('gulp-open');
 
 gulp.task('connect', function() {
     connect.server();
 });
 
-var watch = require('gulp-watch');
+
+gulp.task('js', function() {
+    gulp.src('scripts/*.js')
+        .pipe(livereload());
+});
 
 gulp.task('watch', function() {
-    gulp.watch('*.js')
-    .pipe(connect.reload());
+    livereload.listen();
+    gulp.watch('scripts/*.js');
 });
 
-gulp.task('open', function(){
-    gulp.src('index.html')
-        .pipe(open());
+gulp.task('op', function(){
+    var options = {
+        uri: 'localhost:8080',
+        app: 'firefox'
+    };
+    gulp.src(__filename)
+        .pipe(open(options));
 });
 
-
-gulp.task('default', ['connect','open']);
+gulp.task('default',['connect','op','watch','js']);
 
